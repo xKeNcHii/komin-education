@@ -21,6 +21,7 @@ const OurPackages = ({ language = 'en' }: OurPackagesProps) => {
       viewAll: 'View All Packages',
       contactUs: 'Contact for Pricing',
       popular: 'Most Popular',
+      idealForLabel: 'Ideal for',
       packages: [
         {
           name: 'Basic',
@@ -71,6 +72,7 @@ const OurPackages = ({ language = 'en' }: OurPackagesProps) => {
       viewAll: '모든 패키지 보기',
       contactUs: '가격 문의',
       popular: '가장 인기',
+      idealForLabel: '적합한 대상',
       packages: [
         {
           name: '베이직',
@@ -121,6 +123,7 @@ const OurPackages = ({ language = 'en' }: OurPackagesProps) => {
       viewAll: '查看所有套餐',
       contactUs: '联系询价',
       popular: '最受欢迎',
+      idealForLabel: '适合人群',
       packages: [
         {
           name: '基础版',
@@ -201,7 +204,7 @@ const OurPackages = ({ language = 'en' }: OurPackagesProps) => {
                 <h3 className="text-2xl font-bold text-navy mb-2">{pkg.name}</h3>
                 <p className="text-gray-600 mb-2">{pkg.description}</p>
                 <p className="text-sm text-teal font-medium">
-                  {content.idealFor}: {pkg.idealFor}
+                  {content.idealForLabel}: {pkg.idealFor}
                 </p>
               </div>
 
@@ -242,7 +245,7 @@ const OurPackages = ({ language = 'en' }: OurPackagesProps) => {
           </Button>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
