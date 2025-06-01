@@ -89,7 +89,7 @@ const FinalCTA = ({ language = 'en' }: FinalCTAProps) => {
             asChild 
             variant="outline" 
             size="lg" 
-            className="border-white text-white hover:bg-white hover:text-navy text-lg px-8 py-4"
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-11 rounded-md bg-transparent border-2 border-white text-white hover:bg-white hover:text-navy text-lg px-8 py-4 w-full sm:w-auto"
           >
             <Link to={`${getBasePath()}/services`}>{content.secondary}</Link>
           </Button>

@@ -34,15 +34,15 @@ const Success = ({ language = 'en' }: SuccessProps) => {
       readMore: 'Read Full Story',
       stories: [
         {
-          name: 'Min-jun Kim',
+          name: 'Kim Min-Ji',
           age: 18,
           from: 'Seoul, South Korea',
           university: 'National University of Singapore',
           program: 'Computer Science',
           year: '2023',
-          image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
+          image: 'https://images.pexels.com/photos/1091956/pexels-photo-1091956.jpeg?auto=compress&cs=tinysrgb&w=600',
           quote: 'KoMin made my dream of studying at NUS come true. From application to settling in Singapore, they were with me every step of the way.',
-          details: 'Min-jun came to us with strong academics but needed guidance on university selection and application strategy. We helped him craft compelling essays and prepared him for interviews, resulting in acceptance to his top choice program.',
+          details: 'Min-Ji came to us with strong academics but needed guidance on university selection and application strategy. We helped her craft compelling essays and prepared her for interviews, resulting in acceptance to her top choice program.',
           achievements: ['Full scholarship recipient', 'Dean\'s List student', 'Student council member']
         },
         {
@@ -52,7 +52,7 @@ const Success = ({ language = 'en' }: SuccessProps) => {
           university: 'Nanyang Technological University',
           program: 'Mechanical Engineering',
           year: '2023',
-          image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80',
+          image: 'https://images.pexels.com/photos/29335871/pexels-photo-29335871/free-photo-of-young-man-reading-in-a-huaian-bookstore.jpeg?auto=compress&cs=tinysrgb&w=600',
           quote: 'The visa process seemed impossible until KoMin stepped in. They handled everything professionally and I got my visa approved quickly.',
           details: 'Li Wei faced challenges with visa documentation due to complex family circumstances. Our immigration specialists worked closely with Singapore authorities to ensure a smooth approval process.',
           achievements: ['Engineering society president', 'Research publication', 'Industry internship']
@@ -64,7 +64,7 @@ const Success = ({ language = 'en' }: SuccessProps) => {
           university: 'Singapore Management University',
           program: 'Business Administration',
           year: '2024',
-          image: 'https://images.unsplash.com/photo-1494790108755-2616c52b5c55?auto=format&fit=crop&w=400&q=80',
+          image: 'https://images.pexels.com/photos/32311362/pexels-photo-32311362/free-photo-of-asian-woman-in-graduation-attire-holding-diploma.jpeg?auto=compress&cs=tinysrgb&w=600',
           quote: 'As a young student, I was overwhelmed by the application process. KoMin\'s team guided me through everything with such care and expertise.',
           details: 'Sarah was one of our youngest applicants, requiring special attention to both academic and personal development. Our comprehensive support helped her transition smoothly to university life.',
           achievements: ['Business case competition winner', 'Student ambassador', 'Startup founder']
@@ -76,7 +76,7 @@ const Success = ({ language = 'en' }: SuccessProps) => {
           university: 'Singapore University of Technology and Design',
           program: 'Architecture',
           year: '2022',
-          image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80',
+          image: 'https://images.pexels.com/photos/14217715/pexels-photo-14217715.jpeg?auto=compress&cs=tinysrgb&w=600',
           quote: 'KoMin didn\'t just help me get admitted - they helped me find the perfect housing and even connected me with other students. I felt at home immediately.',
           details: 'Chen Ming needed extensive support with portfolio development for architecture programs. Our academic specialists worked with him to create a standout application that showcased his creative abilities.',
           achievements: ['Design competition finalist', 'Architecture society VP', 'Published designer']
@@ -106,7 +106,7 @@ const Success = ({ language = 'en' }: SuccessProps) => {
           university: '싱가포르 국립대학교',
           program: '컴퓨터 공학',
           year: '2023',
-          image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
+          image: 'https://images.pexels.com/photos/1091956/pexels-photo-1091956.jpeg?auto=compress&cs=tinysrgb&w=600',
           quote: 'KoMin이 NUS에서 공부하는 제 꿈을 실현시켜 주었습니다. 지원부터 싱가포르 정착까지 모든 과정에서 함께해 주었습니다.',
           details: '민준이는 우수한 학업 성적을 가지고 있었지만 대학 선택과 지원 전략에 대한 안내가 필요했습니다. 설득력 있는 에세이 작성을 도우고 면접을 준비시켜 첫 번째 선택 프로그램에 합격하게 했습니다.',
           achievements: ['전액 장학금 수혜자', '학장상 수상', '학생회 임원']
@@ -118,7 +118,7 @@ const Success = ({ language = 'en' }: SuccessProps) => {
           university: '난양기술대학교',
           program: '기계공학',
           year: '2023',
-          image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80',
+          image: 'https://images.pexels.com/photos/29335871/pexels-photo-29335871/free-photo-of-young-man-reading-in-a-huaian-bookstore.jpeg?auto=compress&cs=tinysrgb&w=600',
           quote: 'KoMin이 개입하기 전까지 비자 절차는 불가능해 보였습니다. 전문적으로 모든 것을 처리해 주어서 비자를 빠르게 승인받았습니다.',
           details: '리웨이는 복잡한 가족 상황으로 인해 비자 서류 문제에 직면했습니다. 우리의 이민 전문가들이 싱가포르 당국과 긴밀히 협력하여 원활한 승인 과정을 보장했습니다.',
           achievements: ['공학회 회장', '연구 논문 발표', '산업 인턴십']
@@ -130,7 +130,7 @@ const Success = ({ language = 'en' }: SuccessProps) => {
           university: '싱가포르 경영대학교',
           program: '경영학',
           year: '2024',
-          image: 'https://images.unsplash.com/photo-1494790108755-2616c52b5c55?auto=format&fit=crop&w=400&q=80',
+          image: 'https://images.pexels.com/photos/32311362/pexels-photo-32311362/free-photo-of-asian-woman-in-graduation-attire-holding-diploma.jpeg?auto=compress&cs=tinysrgb&w=600',
           quote: '어린 학생으로서 지원 과정에 압도당했습니다. KoMin 팀이 세심한 배려와 전문성으로 모든 것을 안내해 주었습니다.',
           details: '세라는 우리의 가장 어린 지원자 중 한 명으로, 학업과 개인 발달 모두에 특별한 관심이 필요했습니다. 우리의 종합적인 지원이 그녀가 대학 생활에 원활하게 적응하도록 도왔습니다.',
           achievements: ['비즈니스 케이스 경연대회 우승', '학생 홍보대사', '스타트업 창업자']
@@ -142,7 +142,7 @@ const Success = ({ language = 'en' }: SuccessProps) => {
           university: '싱가포르 기술디자인대학교',
           program: '건축학',
           year: '2022',
-          image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80',
+          image: 'https://images.pexels.com/photos/14217715/pexels-photo-14217715.jpeg?auto=compress&cs=tinysrgb&w=600',
           quote: 'KoMin은 입학만 도와준 것이 아니라 완벽한 숙소를 찾는 것과 다른 학생들과 연결해 주는 것까지 도와주었습니다. 즉시 집처럼 느껴졌습니다.',
           details: '첸밍은 건축 프로그램을 위한 포트폴리오 개발에 광범위한 지원이 필요했습니다. 우리의 학업 전문가들이 그와 함께 작업하여 그의 창의적 능력을 보여주는 뛰어난 지원서를 만들었습니다.',
           achievements: ['디자인 경연대회 결선 진출', '건축학회 부회장', '출간 디자이너']
@@ -172,7 +172,7 @@ const Success = ({ language = 'en' }: SuccessProps) => {
           university: '新加坡国立大学',
           program: '计算机科学',
           year: '2023',
-          image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80',
+          image: 'https://images.pexels.com/photos/1091956/pexels-photo-1091956.jpeg?auto=compress&cs=tinysrgb&w=600',
           quote: 'KoMin让我在新加坡国立大学学习的梦想成真。从申请到定居新加坡，他们在每一步都陪伴着我。',
           details: '敏俊有着优秀的学术成绩，但需要大学选择和申请策略的指导。我们帮助他撰写了有说服力的文书并为面试做准备，最终被他的首选专业录取。',
           achievements: ['全额奖学金获得者', '院长榜学生', '学生会成员']
@@ -184,7 +184,7 @@ const Success = ({ language = 'en' }: SuccessProps) => {
           university: '南洋理工大学',
           program: '机械工程',
           year: '2023',
-          image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80',
+          image: 'https://images.pexels.com/photos/29335871/pexels-photo-29335871/free-photo-of-young-man-reading-in-a-huaian-bookstore.jpeg?auto=compress&cs=tinysrgb&w=600',
           quote: '直到KoMin介入，签证程序看起来不可能完成。他们专业地处理了一切，我的签证很快就获得了批准。',
           details: '李伟由于复杂的家庭情况在签证文件方面面临挑战。我们的移民专家与新加坡当局密切合作，确保了顺利的批准过程。',
           achievements: ['工程协会主席', '研究发表', '行业实习']
@@ -196,7 +196,7 @@ const Success = ({ language = 'en' }: SuccessProps) => {
           university: '新加坡管理大学',
           program: '工商管理',
           year: '2024',
-          image: 'https://images.unsplash.com/photo-1494790108755-2616c52b5c55?auto=format&fit=crop&w=400&q=80',
+          image: 'https://images.pexels.com/photos/32311362/pexels-photo-32311362/free-photo-of-asian-woman-in-graduation-attire-holding-diploma.jpeg?auto=compress&cs=tinysrgb&w=600',
           quote: '作为一名年轻学生，申请过程让我感到不知所措。KoMin团队以如此细心和专业的方式指导我完成了一切。',
           details: '莎拉是我们最年轻的申请者之一，需要在学术和个人发展方面给予特别关注。我们的全面支持帮助她顺利过渡到大学生活。',
           achievements: ['商业案例竞赛获胜者', '学生大使', '初创公司创始人']
@@ -208,7 +208,7 @@ const Success = ({ language = 'en' }: SuccessProps) => {
           university: '新加坡科技设计大学',
           program: '建筑学',
           year: '2022',
-          image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80',
+          image: 'https://images.pexels.com/photos/14217715/pexels-photo-14217715.jpeg?auto=compress&cs=tinysrgb&w=600',
           quote: 'KoMin不只是帮我录取 - 他们帮我找到了完美的住房，甚至把我和其他学生联系起来。我立即感到宾至如归。',
           details: '陈明需要在建筑专业作品集开发方面的广泛支持。我们的学术专家与他合作，创建了一个突出展示他创意能力的出色申请。',
           achievements: ['设计竞赛决赛选手', '建筑协会副主席', '出版设计师']

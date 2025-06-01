@@ -170,7 +170,7 @@ const WhySingapore = ({ language = 'en' }: WhySingaporeProps) => {
         </div>
 
         {/* Statistics Banner */}
-        <div className="mt-16 bg-gradient-to-r from-navy to-teal rounded-2xl p-8 text-white">
+        <div className="mt-16 bg-gradient-to-br from-navy to-navy/80 rounded-2xl p-8 text-white">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold mb-2">#3</div>

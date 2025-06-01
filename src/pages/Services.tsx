@@ -68,7 +68,7 @@ const Services = ({ language = 'en' }: ServicesProps) => {
             'Exam preparation',
             'Academic mentoring'
           ],
-          image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80'
+          image: 'https://images.pexels.com/photos/8617697/pexels-photo-8617697.jpeg?auto=compress&cs=tinysrgb&w=600'
         },
         {
           title: 'Relocation Support',
@@ -92,7 +92,7 @@ const Services = ({ language = 'en' }: ServicesProps) => {
             'Crisis management',
             'Local liaison services'
           ],
-          image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80'
+          image: 'https://images.pexels.com/photos/5691846/pexels-photo-5691846.jpeg?auto=compress&cs=tinysrgb&w=600'
         }
       ]
     },
@@ -148,7 +148,7 @@ const Services = ({ language = 'en' }: ServicesProps) => {
             '시험 준비',
             '학업 멘토링'
           ],
-          image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80'
+          image: 'https://images.pexels.com/photos/8617697/pexels-photo-8617697.jpeg?auto=compress&cs=tinysrgb&w=600'
         },
         {
           title: '이주 지원',
@@ -172,7 +172,7 @@ const Services = ({ language = 'en' }: ServicesProps) => {
             '위기 관리',
             '현지 연락 서비스'
           ],
-          image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80'
+          image: 'https://images.pexels.com/photos/5691846/pexels-photo-5691846.jpeg?auto=compress&cs=tinysrgb&w=600'
         }
       ]
     },
@@ -228,7 +228,7 @@ const Services = ({ language = 'en' }: ServicesProps) => {
             '考试准备',
             '学术指导'
           ],
-          image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80'
+          image: 'https://images.pexels.com/photos/8617697/pexels-photo-8617697.jpeg?auto=compress&cs=tinysrgb&w=600'
         },
         {
           title: '搬迁支持',
@@ -252,7 +252,7 @@ const Services = ({ language = 'en' }: ServicesProps) => {
             '危机管理',
             '本地联络服务'
           ],
-          image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80'
+          image: 'https://images.pexels.com/photos/5691846/pexels-photo-5691846.jpeg?auto=compress&cs=tinysrgb&w=600'
         }
       ]
     }

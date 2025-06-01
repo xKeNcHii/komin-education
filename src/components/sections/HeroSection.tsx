@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -78,12 +77,12 @@ const HeroSection = ({ language = 'en' }: HeroSectionProps) => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img 
-          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2000&q=80" 
-          alt="International students on Singapore university campus"
+          src="https://image.cnbcfm.com/api/v1/image/102743255-nus_u_town_small.jpg?v=1433832337" 
+          alt="NUS Singapore university campus"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/40"></div>
@@ -92,87 +91,89 @@ const HeroSection = ({ language = 'en' }: HeroSectionProps) => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <div className="animate-fade-in text-white">
-            <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
+          <div className="animate-fade-in text-white flex flex-col items-center lg:items-start">
+            {/* Headline */}
+            <h1 className="text-4xl lg:text-6xl font-extrabold leading-tight mb-4 text-center lg:text-left whitespace-normal">
               {texts.headline}
             </h1>
-            <p className="text-xl leading-relaxed mb-8 text-white/90" style={{ lineHeight: '1.5' }}>
+            {/* Subheading */}
+            <p className="text-lg lg:text-xl text-white/80 mb-8 text-center lg:text-left max-w-2xl">
               {texts.subheadline}
             </p>
-            
-            {/* Benefits List */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-              {texts.benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center space-x-3">
-                  <Check className="w-5 h-5 text-white flex-shrink-0" />
-                  <span className="text-white/90">{benefit}</span>
-                </div>
-              ))}
+            {/* Key Services */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 w-full max-w-xl">
+              <div className="flex items-center space-x-3">
+                <Check className="w-6 h-6 text-green-400" />
+                <span className="text-white/90">University Application Strategy</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Building2 className="w-6 h-6 text-blue-300" />
+                <span className="text-white/90">Accommodation & Visa Support</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <MessageCircle className="w-6 h-6 text-yellow-300" />
+                <span className="text-white/90">Academic Prep & Tutoring</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone className="w-6 h-6 text-emerald-300" />
+                <span className="text-white/90">Ongoing Guardian Support in Singapore</span>
+              </div>
             </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button asChild size="lg" className="bg-soft-red hover:bg-soft-red/90 text-white text-lg px-8 py-4">
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-8 w-full max-w-xl">
+              <Button asChild size="lg" className="bg-soft-red hover:bg-soft-red/90 text-white text-lg px-8 py-4 font-bold w-full sm:w-auto">
                 <Link to={`${getBasePath()}/consult`}>{texts.cta}</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-navy text-lg px-8 py-4">
+              <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-navy text-lg px-8 py-4 w-full sm:w-auto">
                 <Link to={`${getBasePath()}/packages`}>{texts.secondaryCta}</Link>
               </Button>
             </div>
-
-            {/* Trust Row with Testimonial */}
-            <div className="space-y-4">
-              <div className="flex items-center text-sm text-white/80">
-                <div className="flex -space-x-2 mr-4">
-                  <div className="w-8 h-8 bg-white/20 rounded-full border-2 border-white flex items-center justify-center text-xs">🇰🇷</div>
-                  <div className="w-8 h-8 bg-white/20 rounded-full border-2 border-white flex items-center justify-center text-xs">🇨🇳</div>
-                  <div className="w-8 h-8 bg-white/20 rounded-full border-2 border-white flex items-center justify-center text-xs">🇸🇬</div>
-                </div>
-                {texts.trustText}
-              </div>
-              
-              {/* Testimonial */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                <p className="text-white/90 italic mb-2">{texts.testimonial}</p>
-                <p className="text-white/70 text-sm">{texts.testimonialAuthor}</p>
+            {/* Testimonial with Avatar */}
+            <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 mb-6 max-w-xl w-full">
+              <div>
+                <p className="text-white/90 italic mb-1">"Without KoMin, we wouldn't have made it to NUS. They handled everything."</p>
+                <p className="text-white/70 text-sm">— Parent, Seoul</p>
               </div>
             </div>
           </div>
 
-          {/* Right Side - Success Badge & University Logos */}
-          <div className="relative animate-fade-in">
-            {/* Floating Success Rate Badge */}
+          {/* Right Side - Stats Badge & University Logos */}
+          <div className="relative animate-fade-in flex flex-col items-center">
+            {/* Stats Badge */}
             <Link 
               to={`${getBasePath()}/success`}
-              className="block bg-white p-8 rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow cursor-pointer group max-w-md mx-auto"
+              className="block bg-white/10 backdrop-blur-sm p-8 rounded-2xl shadow-2xl hover:shadow-3xl transition-shadow cursor-pointer group max-w-xs mx-auto mb-8"
             >
-              <div className="text-center">
-                <div className="w-16 h-16 bg-navy/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-navy/20 transition-colors">
-                  <Check className="w-8 h-8 text-navy" />
+              <div className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 border-4 border-green-400 shadow-lg">
+                  <Check className="w-14 h-14 text-green-600" />
                 </div>
-                <div className="text-3xl font-bold text-navy mb-2">{texts.successRate}</div>
-                <div className="text-gray-600">{texts.successSubtext}</div>
+                <div className="text-4xl font-extrabold text-white mb-2">{texts.successRate}</div>
+                <div className="text-white/90 text-base">{texts.successSubtext}</div>
               </div>
             </Link>
-
             {/* University Logos */}
-            <div className="mt-8 bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <div className="mt-4 bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 w-full">
               <div className="text-center text-white/80 text-sm mb-4">
                 {language === 'en' ? 'Partnered Universities' : 
-                 language === 'kr' ? '파트너 대학교' : '合作大学'}
+                language === 'kr' ? '파트너 대학교' : '合作大学'}
               </div>
-              <div className="flex justify-center items-center space-x-6 text-white/70">
-                <div className="text-center">
-                  <Building2 className="w-8 h-8 mx-auto mb-1 text-white/80" />
-                  <div className="text-xs">NUS</div>
-                </div>
-                <div className="text-center">
-                  <Building2 className="w-8 h-8 mx-auto mb-1 text-white/80" />
-                  <div className="text-xs">NTU</div>
-                </div>
-                <div className="text-center">
-                  <Building2 className="w-8 h-8 mx-auto mb-1 text-white/80" />
-                  <div className="text-xs">SMU</div>
-                </div>
+              <div className="flex flex-wrap justify-center items-center gap-6">
+                <img
+                  src="https://iconlogovector.com/uploads/images/2024/09/sm-66fa7542d181e-National-University-of-Singapo.webp"
+                  alt="NUS Logo"
+                  className="h-16 w-auto object-contain"
+                />
+                <img
+                  src="https://download.logo.wine/logo/Nanyang_Technological_University/Nanyang_Technological_University-Logo.wine.png"
+                  alt="NTU Logo"
+                  className="h-16 w-auto object-contain"
+                />
+                <img
+                  src="https://images.seeklogo.com/logo-png/35/2/singapore-management-university-smu-logo-png_seeklogo-353772.png"
+                  alt="SMU Logo"
+                  className="h-16 w-auto object-contain"
+                />
               </div>
             </div>
           </div>
@@ -180,7 +181,7 @@ const HeroSection = ({ language = 'en' }: HeroSectionProps) => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 inset-x-0 flex justify-center animate-bounce">
         <button 
           onClick={scrollToNextSection}
           className="p-2 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 transition-colors"

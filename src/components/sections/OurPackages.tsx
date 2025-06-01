@@ -189,50 +189,55 @@ const OurPackages = ({ language = 'en' }: OurPackagesProps) => {
                 pkg.popular ? 'border-2 border-soft-red' : ''
               }`}
             >
-              {/* Popular Badge */}
+              {/* Popular Badge (stays outside flex container to avoid layout interference) */}
               {pkg.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                   <span className="bg-soft-red text-white px-4 py-1 rounded-full text-sm font-medium">
                     {content.popular}
                   </span>
                 </div>
               )}
 
-              {/* Package Name & Description */}
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-navy mb-2">{pkg.name}</h3>
-                <p className="text-gray-600 mb-2">{pkg.description}</p>
-                <p className="text-sm text-teal font-medium">
-                  {content.idealForLabel}: {pkg.idealFor}
-                </p>
-              </div>
+              {/* Flex container for internal alignment */}
+              <div className="flex flex-col h-full">
+                {/* Package Header */}
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-navy mb-2">{pkg.name}</h3>
+                  <p className="text-gray-600 mb-2">{pkg.description}</p>
+                  <p className="text-sm text-teal font-medium">
+                    {content.idealForLabel}: {pkg.idealFor}
+                  </p>
+                </div>
 
-              {/* Price */}
-              <div className="text-center mb-6">
-                <div className="text-3xl font-bold text-navy">{pkg.price}</div>
-              </div>
+                {/* Price */}
+                <div className="text-center mb-6">
+                  <div className="text-3xl font-bold text-navy">{pkg.price}</div>
+                </div>
 
-              {/* Features */}
-              <div className="space-y-3 mb-8">
-                {pkg.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-start">
-                    <Check className="w-5 h-5 text-teal mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
+                {/* Features (flex-grow makes this fill available space) */}
+                <div className="flex-grow">
+                  <div className="space-y-3 mb-4">
+                    {pkg.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-start">
+                        <Check className="w-5 h-5 text-teal mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">{feature}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </div>
 
-              {/* CTA Button */}
-              <Button 
-                asChild 
-                className={`w-full ${
-                  pkg.popular 
-                    ? 'bg-soft-red hover:bg-soft-red/90' 
-                    : 'bg-navy hover:bg-navy/90'
-                }`}
-              >
-                <Link to={`${getBasePath()}/consult`}>{content.contactUs}</Link>
-              </Button>
+                {/* CTA Button (mt-auto pushes it to the bottom) */}
+                <Button 
+                  asChild 
+                  className={`mt-auto w-full ${
+                    pkg.popular 
+                      ? 'bg-soft-red hover:bg-soft-red/90' 
+                      : 'bg-navy hover:bg-navy/90'
+                  }`}
+                >
+                  <Link to={`${getBasePath()}/consult`}>{content.contactUs}</Link>
+                </Button>
+              </div>
             </div>
           ))}
         </div>
