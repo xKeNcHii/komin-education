@@ -136,10 +136,10 @@ const WhatWeDo = ({ language = 'en' }: WhatWeDoProps) => {
             return (
               <div 
                 key={index} 
-                className="relative group p-8 bg-light-gray rounded-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-2"
+                className="relative group p-6 sm:p-8 bg-light-gray rounded-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-2 ml-6 sm:ml-0"
               >
-                {/* Step Number */}
-                <div className="absolute -top-4 -left-4 w-8 h-8 bg-soft-red text-white rounded-full flex items-center justify-center font-bold text-sm">
+                {/* Step Number - Perfectly positioned */}
+                <div className="absolute top-0 left-0 w-8 h-8 bg-soft-red text-white rounded-full flex items-center justify-center font-bold text-sm transform -translate-y-1/2 -translate-x-1/4">
                   {index + 1}
                 </div>
 
@@ -156,19 +156,31 @@ const WhatWeDo = ({ language = 'en' }: WhatWeDoProps) => {
           })}
         </div>
 
-        {/* Process Flow Indicator */}
-        <div className="mt-16 flex justify-center">
-          <div className="flex items-center space-x-4">
-            {[1, 2, 3, 4, 5, 6].map((step, index) => (
-              <React.Fragment key={step}>
-                <div className="w-10 h-10 bg-navy text-white rounded-full flex items-center justify-center font-semibold">
+        {/* Process Flow Indicator - Responsive */}
+        <div className="mt-16">
+          {/* Desktop View */}
+          <div className="hidden md:flex justify-center">
+            <div className="flex items-center space-x-4">
+              {[1, 2, 3, 4, 5, 6].map((step, index) => (
+                <React.Fragment key={step}>
+                  <div className="w-10 h-10 bg-navy text-white rounded-full flex items-center justify-center font-semibold">
+                    {step}
+                  </div>
+                  {index < 5 && <div className="w-8 h-0.5 bg-gray-300"></div>}
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+          
+          {/* Mobile View */}
+          <div className="hidden">
+            <div className="grid grid-cols-6 gap-4">
+              {[1, 2, 3, 4, 5, 6].map((step) => (
+                <div key={step} className="w-10 h-10 bg-navy text-white rounded-full flex items-center justify-center font-semibold mx-auto">
                   {step}
                 </div>
-                {index < 5 && (
-                  <div className="w-8 h-0.5 bg-gray-300"></div>
-                )}
-              </React.Fragment>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
