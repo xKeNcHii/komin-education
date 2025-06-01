@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
 
 interface ContactProps {
   language?: 'en' | 'kr' | 'cn';
@@ -25,6 +25,8 @@ const Contact = ({ language = 'en' }: ContactProps) => {
       fullConsultation: 'Schedule Full Consultation',
       officeHours: 'Office Hours',
       contactInfo: 'Contact Information',
+      emergencySupport: '24/7 Emergency Support',
+      emergencyText: 'For urgent matters involving current students in Singapore:',
       form: {
         name: 'Your Name',
         email: 'Email Address',
@@ -63,6 +65,8 @@ const Contact = ({ language = 'en' }: ContactProps) => {
       fullConsultation: '전체 상담 예약',
       officeHours: '운영 시간',
       contactInfo: '연락처 정보',
+      emergencySupport: '24시간 긴급 지원',
+      emergencyText: '싱가포르 재학생 관련 긴급 사항:',
       form: {
         name: '성명',
         email: '이메일 주소',
@@ -101,6 +105,8 @@ const Contact = ({ language = 'en' }: ContactProps) => {
       fullConsultation: '预约完整咨询',
       officeHours: '办公时间',
       contactInfo: '联系信息',
+      emergencySupport: '24/7紧急支持',
+      emergencyText: '新加坡在读学生紧急事务：',
       form: {
         name: '您的姓名',
         email: '电子邮箱',
@@ -225,11 +231,30 @@ const Contact = ({ language = 'en' }: ContactProps) => {
                   ))}
                 </div>
 
+                {/* Messaging Apps */}
+                <div className="mt-8 bg-light-gray p-6 rounded-xl">
+                  <h3 className="text-lg font-semibold text-navy mb-4">Instant Messaging</h3>
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3">
+                      <MessageCircle className="w-5 h-5 text-navy" />
+                      <span className="text-gray-700">WhatsApp: +65 9123 4567</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <MessageCircle className="w-5 h-5 text-navy" />
+                      <span className="text-gray-700">WeChat: KoMinEducation</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <MessageCircle className="w-5 h-5 text-navy" />
+                      <span className="text-gray-700">KakaoTalk: KoMinEducation</span>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Additional Contact Methods */}
                 <div className="mt-8 bg-navy text-white p-6 rounded-xl">
-                  <h3 className="text-lg font-semibold mb-4">24/7 Emergency Support</h3>
+                  <h3 className="text-lg font-semibold mb-4">{content.emergencySupport}</h3>
                   <p className="text-white/90 mb-4">
-                    For urgent matters involving current students in Singapore:
+                    {content.emergencyText}
                   </p>
                   <div className="flex items-center space-x-3">
                     <Phone className="w-5 h-5" />

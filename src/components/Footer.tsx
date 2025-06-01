@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Mail, Phone, MessageCircle } from 'lucide-react';
 
 interface FooterProps {
   language?: 'en' | 'kr' | 'cn';
@@ -17,8 +18,11 @@ const Footer = ({ language = 'en' }: FooterProps) => {
       tagline: 'Your trusted guide to Singapore\'s top universities',
       contact: 'Contact Us',
       email: 'info@komin-education.com',
-      whatsapp: 'WhatsApp: +65 9123 4567',
-      wechat: 'WeChat: KoMinEducation',
+      singapore: 'Singapore: +65 9123 4567',
+      korea: 'Korea: +82 10 1234 5678',
+      whatsapp: 'WhatsApp',
+      wechat: 'WeChat',
+      kakao: 'KakaoTalk',
       quickLinks: 'Quick Links',
       services: 'Services',
       packages: 'Packages',
@@ -34,8 +38,11 @@ const Footer = ({ language = 'en' }: FooterProps) => {
       tagline: '싱가포르 명문대학교 진학을 위한 신뢰할 수 있는 가이드',
       contact: '연락처',
       email: 'info@komin-education.com',
-      whatsapp: 'WhatsApp: +65 9123 4567',
-      wechat: 'WeChat: KoMinEducation',
+      singapore: '싱가포르: +65 9123 4567',
+      korea: '한국: +82 10 1234 5678',
+      whatsapp: 'WhatsApp',
+      wechat: 'WeChat',
+      kakao: '카카오톡',
       quickLinks: '빠른 링크',
       services: '서비스',
       packages: '패키지',
@@ -51,8 +58,11 @@ const Footer = ({ language = 'en' }: FooterProps) => {
       tagline: '您通往新加坡顶尖大学的可靠向导',
       contact: '联系我们',
       email: 'info@komin-education.com',
-      whatsapp: 'WhatsApp: +65 9123 4567',
-      wechat: 'WeChat: KoMinEducation',
+      singapore: '新加坡: +65 9123 4567',
+      korea: '韩国: +82 10 1234 5678',
+      whatsapp: 'WhatsApp',
+      wechat: 'WeChat',
+      kakao: 'KakaoTalk',
       quickLinks: '快速链接',
       services: '服务',
       packages: '套餐',
@@ -81,10 +91,31 @@ const Footer = ({ language = 'en' }: FooterProps) => {
           {/* Contact Info */}
           <div>
             <h3 className="text-lg font-semibold mb-4">{texts.contact}</h3>
-            <div className="space-y-2 text-sm text-gray-300">
-              <p>{texts.email}</p>
-              <p>{texts.whatsapp}</p>
-              <p>{texts.wechat}</p>
+            <div className="space-y-3 text-sm text-gray-300">
+              <div className="flex items-center space-x-2">
+                <Mail className="w-4 h-4" />
+                <span>{texts.email}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Phone className="w-4 h-4" />
+                <span>{texts.singapore}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Phone className="w-4 h-4" />
+                <span>{texts.korea}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MessageCircle className="w-4 h-4" />
+                <span>{texts.whatsapp}: +65 9123 4567</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MessageCircle className="w-4 h-4" />
+                <span>{texts.wechat}: KoMinEducation</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <MessageCircle className="w-4 h-4" />
+                <span>{texts.kakao}: KoMinEducation</span>
+              </div>
             </div>
           </div>
 

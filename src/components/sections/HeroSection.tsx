@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, Check } from 'lucide-react';
+import { ChevronDown, Check, Building2, MessageCircle, Phone } from 'lucide-react';
 
 interface HeroSectionProps {
   language?: 'en' | 'kr' | 'cn';
@@ -147,7 +147,7 @@ const HeroSection = ({ language = 'en' }: HeroSectionProps) => {
             >
               <div className="text-center">
                 <div className="w-16 h-16 bg-navy/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-navy/20 transition-colors">
-                  <span className="text-navy font-bold text-2xl">✓</span>
+                  <Check className="w-8 h-8 text-navy" />
                 </div>
                 <div className="text-3xl font-bold text-navy mb-2">{texts.successRate}</div>
                 <div className="text-gray-600">{texts.successSubtext}</div>
@@ -162,15 +162,15 @@ const HeroSection = ({ language = 'en' }: HeroSectionProps) => {
               </div>
               <div className="flex justify-center items-center space-x-6 text-white/70">
                 <div className="text-center">
-                  <div className="text-2xl mb-1">🏛️</div>
+                  <Building2 className="w-8 h-8 mx-auto mb-1 text-white/80" />
                   <div className="text-xs">NUS</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl mb-1">🏛️</div>
+                  <Building2 className="w-8 h-8 mx-auto mb-1 text-white/80" />
                   <div className="text-xs">NTU</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl mb-1">🏛️</div>
+                  <Building2 className="w-8 h-8 mx-auto mb-1 text-white/80" />
                   <div className="text-xs">SMU</div>
                 </div>
               </div>

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { Mail, Phone, MessageCircle } from 'lucide-react';
 
 interface FinalCTAProps {
   language?: 'en' | 'kr' | 'cn';
@@ -23,7 +24,8 @@ const FinalCTA = ({ language = 'en' }: FinalCTAProps) => {
         '30-minute personalized consultation',
         'University matching and guidance',
         'No obligation or hidden fees'
-      ]
+      ],
+      preferTalk: 'Prefer to talk directly?'
     },
     kr: {
       title: '싱가포르 대학교 여정을 시작할 준비가 되셨나요?',
@@ -34,7 +36,8 @@ const FinalCTA = ({ language = 'en' }: FinalCTAProps) => {
         '30분 개인 맞춤 상담',
         '대학교 매칭 및 가이드',
         '의무사항이나 숨겨진 비용 없음'
-      ]
+      ],
+      preferTalk: '직접 통화를 원하시나요?'
     },
     cn: {
       title: '准备开始您的新加坡大学之旅了吗？',
@@ -45,14 +48,15 @@ const FinalCTA = ({ language = 'en' }: FinalCTAProps) => {
         '30分钟个性化咨询',
         '大学匹配和指导',
         '无义务或隐藏费用'
-      ]
+      ],
+      preferTalk: '更喜欢直接通话？'
     }
   };
 
   const content = texts[language];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-navy to-teal text-white">
+    <section className="py-20 bg-gradient-to-br from-navy to-navy/80 text-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Main Content */}
         <h2 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
@@ -93,11 +97,20 @@ const FinalCTA = ({ language = 'en' }: FinalCTAProps) => {
 
         {/* Contact Info */}
         <div className="mt-12 pt-8 border-t border-white/20">
-          <p className="text-white/70 mb-4">Prefer to talk directly?</p>
+          <p className="text-white/70 mb-4">{content.preferTalk}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center text-sm">
-            <span>📧 info@komin-education.com</span>
-            <span>📱 WhatsApp: +65 9123 4567</span>
-            <span>💬 WeChat: KoMinEducation</span>
+            <div className="flex items-center space-x-2">
+              <Mail className="w-4 h-4" />
+              <span>info@komin-education.com</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <MessageCircle className="w-4 h-4" />
+              <span>WhatsApp: +65 9123 4567</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <MessageCircle className="w-4 h-4" />
+              <span>KakaoTalk: KoMinEducation</span>
+            </div>
           </div>
         </div>
       </div>
