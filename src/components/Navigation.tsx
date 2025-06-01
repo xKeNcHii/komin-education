@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 
 interface NavigationProps {
   language?: 'en' | 'kr' | 'cn';
@@ -82,23 +82,24 @@ const Navigation = ({ language = 'en' }: NavigationProps) => {
 
           {/* Language Selector & CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            {/* Language Selector */}
-            <div className="flex items-center space-x-2">
+            {/* Language Selector with Globe Icon */}
+            <div className="flex items-center space-x-2 border border-gray-200 rounded-lg p-1">
+              <Globe className="w-4 h-4 text-gray-500" />
               <Link 
                 to={location.pathname.replace(/^\/(kr|cn|en)/, '/en')} 
-                className={`px-2 py-1 rounded text-sm ${language === 'en' ? 'bg-navy text-white' : 'text-gray-600 hover:text-navy'}`}
+                className={`px-3 py-1 rounded text-sm transition-colors ${language === 'en' ? 'bg-navy text-white' : 'text-gray-600 hover:text-navy hover:bg-gray-50'}`}
               >
                 EN
               </Link>
               <Link 
                 to={`/kr${location.pathname.replace(/^\/(kr|cn|en)/, '')}`} 
-                className={`px-2 py-1 rounded text-sm ${language === 'kr' ? 'bg-navy text-white' : 'text-gray-600 hover:text-navy'}`}
+                className={`px-3 py-1 rounded text-sm transition-colors ${language === 'kr' ? 'bg-navy text-white' : 'text-gray-600 hover:text-navy hover:bg-gray-50'}`}
               >
                 한국어
               </Link>
               <Link 
                 to={`/cn${location.pathname.replace(/^\/(kr|cn|en)/, '')}`} 
-                className={`px-2 py-1 rounded text-sm ${language === 'cn' ? 'bg-navy text-white' : 'text-gray-600 hover:text-navy'}`}
+                className={`px-3 py-1 rounded text-sm transition-colors ${language === 'cn' ? 'bg-navy text-white' : 'text-gray-600 hover:text-navy hover:bg-gray-50'}`}
               >
                 中文
               </Link>
@@ -143,6 +144,7 @@ const Navigation = ({ language = 'en' }: NavigationProps) => {
               
               {/* Mobile Language Selector */}
               <div className="flex items-center space-x-2 pt-4 border-t border-gray-200">
+                <Globe className="w-4 h-4 text-gray-500" />
                 <span className="text-sm text-gray-500">Language:</span>
                 <Link 
                   to={location.pathname.replace(/^\/(kr|cn|en)/, '/en')} 
