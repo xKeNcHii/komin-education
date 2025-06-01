@@ -82,7 +82,7 @@ const HeroSection = ({ language = 'en' }: HeroSectionProps) => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img 
-          src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=2000&q=80" 
+          src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2000&q=80" 
           alt="International students on Singapore university campus"
           className="w-full h-full object-cover"
         />
@@ -111,7 +111,7 @@ const HeroSection = ({ language = 'en' }: HeroSectionProps) => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button asChild size="lg" className="bg-navy hover:bg-navy/90 text-white text-lg px-8 py-4">
+              <Button asChild size="lg" className="bg-soft-red hover:bg-soft-red/90 text-white text-lg px-8 py-4">
                 <Link to={`${getBasePath()}/consult`}>{texts.cta}</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-navy text-lg px-8 py-4">
