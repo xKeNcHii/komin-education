@@ -121,64 +121,54 @@ const WhatWeDo = ({ language = 'en' }: WhatWeDoProps) => {
   const content = texts[language];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-navy mb-4">{content.title}</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">{content.subtitle}</p>
+        <div className="text-center mb-20">
+          <h2 className="text-4xl lg:text-5xl font-bold text-navy mb-6 animate-fade-in">{content.title}</h2>
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed animate-[fade-in_1s_ease-out_200ms_both]">{content.subtitle}</p>
         </div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           {content.steps.map((step, index) => {
             const IconComponent = step.icon;
             return (
               <div 
                 key={index} 
-                className="relative group p-6 sm:p-8 bg-light-gray rounded-2xl hover:shadow-lg transition-all duration-300 hover:-translate-y-2 ml-6 sm:ml-0"
+                className={`relative group p-8 bg-gradient-to-br from-light-gray to-gray-50 rounded-3xl hover:shadow-xl transition-all duration-500 hover:-translate-y-3 ml-8 animate-[fade-in_1s_ease-out_${400 + index * 100}ms_both]`}
               >
                 {/* Step Number - Perfectly positioned */}
-                <div className="absolute top-0 left-0 w-8 h-8 bg-soft-red text-white rounded-full flex items-center justify-center font-bold text-sm transform -translate-y-1/2 -translate-x-1/4">
+                <div className="absolute top-0 left-0 w-10 h-10 bg-gradient-to-br from-soft-red to-red-500 text-white rounded-full flex items-center justify-center font-bold text-lg transform -translate-y-1/2 -translate-x-1/4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   {index + 1}
                 </div>
 
                 {/* Icon */}
-                <div className="w-16 h-16 bg-teal/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-teal/20 transition-colors">
-                  <IconComponent className="w-8 h-8 text-teal" />
+                <div className="w-20 h-20 bg-gradient-to-br from-teal/10 to-teal/20 rounded-3xl flex items-center justify-center mb-8 group-hover:from-teal/20 group-hover:to-teal/30 transition-all duration-300 group-hover:scale-110">
+                  <IconComponent className="w-10 h-10 text-teal group-hover:scale-110 transition-transform duration-300" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-semibold text-navy mb-3">{step.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                <h3 className="text-2xl font-semibold text-navy mb-4 group-hover:text-soft-red transition-colors duration-300">{step.title}</h3>
+                <p className="text-gray-600 leading-relaxed text-lg">{step.description}</p>
               </div>
             );
           })}
         </div>
 
-        {/* Process Flow Indicator - Responsive */}
-        <div className="mt-16">
-          {/* Desktop View */}
-          <div className="hidden md:flex justify-center">
-            <div className="flex items-center space-x-4">
+        {/* Process Flow Indicator with enhanced animations */}
+        <div className="mt-20 animate-[fade-in_1s_ease-out_1400ms_both]">
+          <div className="flex justify-center">
+            <div className="flex items-center space-x-6">
               {[1, 2, 3, 4, 5, 6].map((step, index) => (
                 <React.Fragment key={step}>
-                  <div className="w-10 h-10 bg-navy text-white rounded-full flex items-center justify-center font-semibold">
+                  <div className={`w-12 h-12 bg-gradient-to-br from-navy to-navy/80 text-white rounded-full flex items-center justify-center font-semibold shadow-lg hover:scale-110 transition-all duration-300 animate-[fade-in_1s_ease-out_${1600 + index * 100}ms_both]`}>
                     {step}
                   </div>
-                  {index < 5 && <div className="w-8 h-0.5 bg-gray-300"></div>}
+                  {index < 5 && (
+                    <div className={`w-12 h-1 bg-gradient-to-r from-gray-300 to-gray-400 rounded-full animate-[fade-in_1s_ease-out_${1700 + index * 100}ms_both]`}></div>
+                  )}
                 </React.Fragment>
-              ))}
-            </div>
-          </div>
-          
-          {/* Mobile View */}
-          <div className="hidden">
-            <div className="grid grid-cols-6 gap-4">
-              {[1, 2, 3, 4, 5, 6].map((step) => (
-                <div key={step} className="w-10 h-10 bg-navy text-white rounded-full flex items-center justify-center font-semibold mx-auto">
-                  {step}
-                </div>
               ))}
             </div>
           </div>

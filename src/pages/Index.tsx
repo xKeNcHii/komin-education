@@ -17,14 +17,30 @@ interface IndexProps {
 const Index = ({ language = 'en' }: IndexProps) => {
   return (
     <Layout language={language}>
-      <HeroSection language={language} />
-      <WhatWeDo language={language} />
-      <WhoWeHelp language={language} />
-      <WhySingapore language={language} />
-      <OurPackages language={language} />
-      <PartnerLogos language={language} />
-      <FAQ language={language} />
-      <FinalCTA language={language} />
+      <div id="hero" className="scroll-mt-16">
+        <HeroSection language={language} />
+      </div>
+      <div id="services" className="scroll-mt-16">
+        <WhatWeDo language={language} />
+      </div>
+      <div id="who-we-help" className="scroll-mt-16">
+        <WhoWeHelp language={language} />
+      </div>
+      <div id="why-singapore" className="scroll-mt-16">
+        <WhySingapore language={language} />
+      </div>
+      <div id="packages" className="scroll-mt-16">
+        <OurPackages language={language} />
+      </div>
+      <div id="partners" className="scroll-mt-16">
+        <PartnerLogos language={language} />
+      </div>
+      <div id="faq" className="scroll-mt-16">
+        <FAQ language={language} />
+      </div>
+      <div id="contact-cta" className="scroll-mt-16">
+        <FinalCTA language={language} />
+      </div>
     </Layout>
   );
 };

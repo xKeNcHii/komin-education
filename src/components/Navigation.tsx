@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Globe } from 'lucide-react';
 
@@ -11,6 +11,7 @@ interface NavigationProps {
 const Navigation = ({ language = 'en' }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const getBasePath = () => {
     if (language === 'en') return '';
@@ -49,71 +50,122 @@ const Navigation = ({ language = 'en' }: NavigationProps) => {
 
   const texts = navItems[language];
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  const handleNavClick = (path: string, sectionId?: string) => {
+    const currentPath = location.pathname.replace(/^\/(kr|cn|en)/, '');
+    const isHomePage = currentPath === '/' || currentPath === '';
+    
+    if (isHomePage && sectionId) {
+      // If on homepage, scroll to section
+      scrollToSection(sectionId);
+    } else if (sectionId) {
+      // Navigate to homepage then scroll
+      navigate(`${getBasePath()}/`);
+      setTimeout(() => scrollToSection(sectionId), 100);
+    } else {
+      // Regular navigation
+      navigate(`${getBasePath()}${path}`);
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to={`${getBasePath()}/`} className="flex items-center">
-            <div className="text-2xl font-bold text-navy">KoMin Education</div>
+          <Link to={`${getBasePath()}/`} className="flex items-center group">
+            <div className="text-2xl font-bold text-navy transition-colors duration-300 group-hover:text-soft-red">
+              KoMin Education
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to={`${getBasePath()}/`} className="text-gray-600 hover:text-navy transition-colors">
+            <button 
+              onClick={() => handleNavClick('/', 'hero')} 
+              className="text-gray-600 hover:text-navy transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-navy after:transition-all after:duration-300 hover:after:w-full"
+            >
               {texts.home}
-            </Link>
-            <Link to={`${getBasePath()}/services`} className="text-gray-600 hover:text-navy transition-colors">
+            </button>
+            <button 
+              onClick={() => handleNavClick('/', 'services')} 
+              className="text-gray-600 hover:text-navy transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-navy after:transition-all after:duration-300 hover:after:w-full"
+            >
               {texts.services}
-            </Link>
-            <Link to={`${getBasePath()}/packages`} className="text-gray-600 hover:text-navy transition-colors">
+            </button>
+            <button 
+              onClick={() => handleNavClick('/', 'packages')} 
+              className="text-gray-600 hover:text-navy transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-navy after:transition-all after:duration-300 hover:after:w-full"
+            >
               {texts.packages}
-            </Link>
-            <Link to={`${getBasePath()}/about`} className="text-gray-600 hover:text-navy transition-colors">
+            </button>
+            <button 
+              onClick={() => handleNavClick('/about')} 
+              className="text-gray-600 hover:text-navy transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-navy after:transition-all after:duration-300 hover:after:w-full"
+            >
               {texts.about}
-            </Link>
-            <Link to={`${getBasePath()}/blog`} className="text-gray-600 hover:text-navy transition-colors">
+            </button>
+            <button 
+              onClick={() => handleNavClick('/blog')} 
+              className="text-gray-600 hover:text-navy transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-navy after:transition-all after:duration-300 hover:after:w-full"
+            >
               {texts.blog}
-            </Link>
-            <Link to={`${getBasePath()}/contact`} className="text-gray-600 hover:text-navy transition-colors">
+            </button>
+            <button 
+              onClick={() => handleNavClick('/contact')} 
+              className="text-gray-600 hover:text-navy transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-navy after:transition-all after:duration-300 hover:after:w-full"
+            >
               {texts.contact}
-            </Link>
+            </button>
           </div>
 
           {/* Language Selector & CTA */}
           <div className="hidden md:flex items-center space-x-4">
             {/* Language Selector with Globe Icon */}
-            <div className="flex items-center space-x-2 border border-gray-200 rounded-lg p-1">
+            <div className="flex items-center space-x-2 border border-gray-200 rounded-lg p-1 bg-white/80 backdrop-blur-sm">
               <Globe className="w-4 h-4 text-gray-500" />
               <Link 
                 to={location.pathname.replace(/^\/(kr|cn|en)/, '/en')} 
-                className={`px-3 py-1 rounded text-sm transition-colors ${language === 'en' ? 'bg-navy text-white' : 'text-gray-600 hover:text-navy hover:bg-gray-50'}`}
+                className={`px-3 py-1 rounded text-sm transition-all duration-300 ${language === 'en' ? 'bg-navy text-white shadow-sm' : 'text-gray-600 hover:text-navy hover:bg-gray-50'}`}
               >
                 EN
               </Link>
               <Link 
                 to={`/kr${location.pathname.replace(/^\/(kr|cn|en)/, '')}`} 
-                className={`px-3 py-1 rounded text-sm transition-colors ${language === 'kr' ? 'bg-navy text-white' : 'text-gray-600 hover:text-navy hover:bg-gray-50'}`}
+                className={`px-3 py-1 rounded text-sm transition-all duration-300 ${language === 'kr' ? 'bg-navy text-white shadow-sm' : 'text-gray-600 hover:text-navy hover:bg-gray-50'}`}
               >
                 한국어
               </Link>
               <Link 
                 to={`/cn${location.pathname.replace(/^\/(kr|cn|en)/, '')}`} 
-                className={`px-3 py-1 rounded text-sm transition-colors ${language === 'cn' ? 'bg-navy text-white' : 'text-gray-600 hover:text-navy hover:bg-gray-50'}`}
+                className={`px-3 py-1 rounded text-sm transition-all duration-300 ${language === 'cn' ? 'bg-navy text-white shadow-sm' : 'text-gray-600 hover:text-navy hover:bg-gray-50'}`}
               >
                 中文
               </Link>
             </div>
             
-            <Button asChild className="bg-soft-red hover:bg-soft-red/90">
-              <Link to={`${getBasePath()}/consult`}>{texts.consult}</Link>
+            <Button 
+              onClick={() => handleNavClick('/consult')}
+              className="bg-soft-red hover:bg-soft-red/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            >
+              {texts.consult}
             </Button>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md text-gray-600 hover:text-navy"
+            className="md:hidden p-2 rounded-md text-gray-600 hover:text-navy transition-colors duration-300"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -121,26 +173,26 @@ const Navigation = ({ language = 'en' }: NavigationProps) => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
+          <div className="md:hidden py-4 border-t border-gray-200 animate-fade-in">
             <div className="flex flex-col space-y-4">
-              <Link to={`${getBasePath()}/`} className="text-gray-600 hover:text-navy" onClick={() => setIsMenuOpen(false)}>
+              <button onClick={() => handleNavClick('/', 'hero')} className="text-gray-600 hover:text-navy text-left transition-colors duration-300">
                 {texts.home}
-              </Link>
-              <Link to={`${getBasePath()}/services`} className="text-gray-600 hover:text-navy" onClick={() => setIsMenuOpen(false)}>
+              </button>
+              <button onClick={() => handleNavClick('/', 'services')} className="text-gray-600 hover:text-navy text-left transition-colors duration-300">
                 {texts.services}
-              </Link>
-              <Link to={`${getBasePath()}/packages`} className="text-gray-600 hover:text-navy" onClick={() => setIsMenuOpen(false)}>
+              </button>
+              <button onClick={() => handleNavClick('/', 'packages')} className="text-gray-600 hover:text-navy text-left transition-colors duration-300">
                 {texts.packages}
-              </Link>
-              <Link to={`${getBasePath()}/about`} className="text-gray-600 hover:text-navy" onClick={() => setIsMenuOpen(false)}>
+              </button>
+              <button onClick={() => handleNavClick('/about')} className="text-gray-600 hover:text-navy text-left transition-colors duration-300">
                 {texts.about}
-              </Link>
-              <Link to={`${getBasePath()}/blog`} className="text-gray-600 hover:text-navy" onClick={() => setIsMenuOpen(false)}>
+              </button>
+              <button onClick={() => handleNavClick('/blog')} className="text-gray-600 hover:text-navy text-left transition-colors duration-300">
                 {texts.blog}
-              </Link>
-              <Link to={`${getBasePath()}/contact`} className="text-gray-600 hover:text-navy" onClick={() => setIsMenuOpen(false)}>
+              </button>
+              <button onClick={() => handleNavClick('/contact')} className="text-gray-600 hover:text-navy text-left transition-colors duration-300">
                 {texts.contact}
-              </Link>
+              </button>
               
               {/* Mobile Language Selector */}
               <div className="flex items-center space-x-2 pt-4 border-t border-gray-200">
@@ -148,29 +200,32 @@ const Navigation = ({ language = 'en' }: NavigationProps) => {
                 <span className="text-sm text-gray-500">Language:</span>
                 <Link 
                   to={location.pathname.replace(/^\/(kr|cn|en)/, '/en')} 
-                  className={`px-2 py-1 rounded text-sm ${language === 'en' ? 'bg-navy text-white' : 'text-gray-600'}`}
+                  className={`px-2 py-1 rounded text-sm transition-all duration-300 ${language === 'en' ? 'bg-navy text-white' : 'text-gray-600'}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   EN
                 </Link>
                 <Link 
                   to={`/kr${location.pathname.replace(/^\/(kr|cn|en)/, '')}`} 
-                  className={`px-2 py-1 rounded text-sm ${language === 'kr' ? 'bg-navy text-white' : 'text-gray-600'}`}
+                  className={`px-2 py-1 rounded text-sm transition-all duration-300 ${language === 'kr' ? 'bg-navy text-white' : 'text-gray-600'}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   한국어
                 </Link>
                 <Link 
                   to={`/cn${location.pathname.replace(/^\/(kr|cn|en)/, '')}`} 
-                  className={`px-2 py-1 rounded text-sm ${language === 'cn' ? 'bg-navy text-white' : 'text-gray-600'}`}
+                  className={`px-2 py-1 rounded text-sm transition-all duration-300 ${language === 'cn' ? 'bg-navy text-white' : 'text-gray-600'}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   中文
                 </Link>
               </div>
               
-              <Button asChild className="bg-soft-red hover:bg-soft-red/90 w-full" onClick={() => setIsMenuOpen(false)}>
-                <Link to={`${getBasePath()}/consult`}>{texts.consult}</Link>
+              <Button 
+                onClick={() => handleNavClick('/consult')}
+                className="bg-soft-red hover:bg-soft-red/90 w-full transition-all duration-300"
+              >
+                {texts.consult}
               </Button>
             </div>
           </div>
