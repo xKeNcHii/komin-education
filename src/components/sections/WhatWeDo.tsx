@@ -156,23 +156,7 @@ const WhatWeDo = ({ language = 'en' }: WhatWeDoProps) => {
           })}
         </div>
 
-        {/* Process Flow Indicator with enhanced animations */}
-        <div className="mt-20 animate-[fade-in_1s_ease-out_1400ms_both]">
-          <div className="flex justify-center">
-            <div className="flex items-center space-x-6">
-              {[1, 2, 3, 4, 5, 6].map((step, index) => (
-                <React.Fragment key={step}>
-                  <div className={`w-12 h-12 bg-gradient-to-br from-navy to-navy/80 text-white rounded-full flex items-center justify-center font-semibold shadow-lg hover:scale-110 transition-all duration-300 animate-[fade-in_1s_ease-out_${1600 + index * 100}ms_both]`}>
-                    {step}
-                  </div>
-                  {index < 5 && (
-                    <div className={`w-12 h-1 bg-gradient-to-r from-gray-300 to-gray-400 rounded-full animate-[fade-in_1s_ease-out_${1700 + index * 100}ms_both]`}></div>
-                  )}
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
