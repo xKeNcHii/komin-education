@@ -1,0 +1,10 @@
+# Cloudflare Pages configuration
+name = "komin-singapore-guide"
+compatibility_date = "2025-06-02"
+
+[build]
+command = "npm run build"
+output_dir = "dist"
+
+[site]
+bucket = "./dist"

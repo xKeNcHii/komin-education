@@ -1,7 +1,9 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MessageCircle } from 'lucide-react';
+import { FaWhatsapp, FaWeixin, FaTelegram, FaPhoneAlt } from 'react-icons/fa';
+import { SiKakaotalk, SiGmail } from 'react-icons/si';
+
 
 interface FooterProps {
   language?: 'en' | 'kr' | 'cn';
@@ -33,7 +35,7 @@ const Footer = ({ language = 'en' }: FooterProps) => {
       legal: 'Legal',
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
-      copyright: '© 2024 KoMin Education. All rights reserved.'
+      copyright: '© 2025 KoMin Education. All rights reserved.'
     },
     kr: {
       tagline: '싱가포르 명문대학교 진학을 위한 신뢰할 수 있는 가이드',
@@ -54,7 +56,7 @@ const Footer = ({ language = 'en' }: FooterProps) => {
       legal: '법적 고지',
       privacy: '개인정보 처리방침',
       terms: '이용약관',
-      copyright: '© 2024 KoMin Education. 모든 권리 보유.'
+      copyright: '© 2025 KoMin Education. 모든 권리 보유.'
     },
     cn: {
       tagline: '您通往新加坡顶尖大学的可靠向导',
@@ -75,7 +77,7 @@ const Footer = ({ language = 'en' }: FooterProps) => {
       legal: '法律声明',
       privacy: '隐私政策',
       terms: '服务条款',
-      copyright: '© 2024 KoMin Education. 保留所有权利。'
+      copyright: '© 2025 KoMin Education. 保留所有权利。'
     }
   };
 
@@ -99,21 +101,21 @@ const Footer = ({ language = 'en' }: FooterProps) => {
                 href="mailto:info@komin-education.com"
                 className="flex items-center space-x-3 hover:text-white transition-colors group cursor-pointer"
               >
-                <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <SiGmail className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>{texts.email}</span>
               </a>
               <a 
                 href="tel:+6591234567"
                 className="flex items-center space-x-3 hover:text-white transition-colors group cursor-pointer"
               >
-                <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <FaPhoneAlt className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>{texts.singapore}</span>
               </a>
               <a 
                 href="tel:+821012345678"
                 className="flex items-center space-x-3 hover:text-white transition-colors group cursor-pointer"
               >
-                <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <FaPhoneAlt className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>{texts.korea}</span>
               </a>
               <a 
@@ -122,7 +124,7 @@ const Footer = ({ language = 'en' }: FooterProps) => {
                 rel="noopener noreferrer"
                 className="flex items-center space-x-3 hover:text-green-400 transition-colors group cursor-pointer"
               >
-                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <FaWhatsapp className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>{texts.whatsapp}: +65 9123 4567</span>
               </a>
               <a 
@@ -131,7 +133,7 @@ const Footer = ({ language = 'en' }: FooterProps) => {
                 rel="noopener noreferrer"
                 className="flex items-center space-x-3 hover:text-green-500 transition-colors group cursor-pointer"
               >
-                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <FaWeixin className="w-5 h-5 green group-hover:scale-110 transition-transform" />
                 <span>{texts.wechat}: KoMinEducation</span>
               </a>
               <a 
@@ -140,7 +142,7 @@ const Footer = ({ language = 'en' }: FooterProps) => {
                 rel="noopener noreferrer"
                 className="flex items-center space-x-3 hover:text-yellow-400 transition-colors group cursor-pointer"
               >
-                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <SiKakaotalk className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>{texts.kakao}: KoMinEducation</span>
               </a>
               <a 
@@ -149,7 +151,7 @@ const Footer = ({ language = 'en' }: FooterProps) => {
                 rel="noopener noreferrer"
                 className="flex items-center space-x-3 hover:text-blue-400 transition-colors group cursor-pointer"
               >
-                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <FaTelegram className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>{texts.telegram}: @KoMinEducation</span>
               </a>
             </div>

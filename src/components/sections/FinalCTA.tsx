@@ -3,6 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MessageCircle } from 'lucide-react';
+import { FaWhatsapp, FaWeixin, FaTelegram } from 'react-icons/fa';
+import { SiKakaotalk } from 'react-icons/si';
 
 interface FinalCTAProps {
   language?: 'en' | 'kr' | 'cn';
@@ -98,7 +100,7 @@ const FinalCTA = ({ language = 'en' }: FinalCTAProps) => {
         {/* Contact Info */}
         <div className="border-t border-white/20 pt-8">
           <p className="text-white/70 mb-6">{content.preferTalk}</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
             <a 
               href="mailto:info@komin-education.com"
               className="flex items-center justify-center space-x-2 p-3 rounded-lg hover:bg-white/10 transition-colors group cursor-pointer"
@@ -112,16 +114,25 @@ const FinalCTA = ({ language = 'en' }: FinalCTAProps) => {
               rel="noopener noreferrer"
               className="flex items-center justify-center space-x-2 p-3 rounded-lg hover:bg-green-600/20 transition-colors group cursor-pointer"
             >
-              <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <FaWhatsapp className="w-5 h-5 text-green-500 group-hover:scale-110 transition-transform" />
               <span className="group-hover:text-white/90">WhatsApp: +65 9123 4567</span>
             </a>
             <a 
-              href="https://t.me/KoMinEducation"
+              href="https://wa.me/6591234567"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center space-x-2 p-3 rounded-lg hover:bg-green-600/20 transition-colors group cursor-pointer"
+            >
+              <FaWeixin className="w-5 h-5 text-green-500 group-hover:scale-110 transition-transform" />
+              <span className="group-hover:text-white/90">WeChat: KoMinEducation</span>
+            </a>
+            <a 
+              href="https://open.kakao.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center space-x-2 p-3 rounded-lg hover:bg-blue-500/20 transition-colors group cursor-pointer"
             >
-              <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <SiKakaotalk className="w-5 h-5 text-yellow-500 group-hover:scale-110 transition-transform" />
               <span className="group-hover:text-white/90">KakaoTalk: KoMinEducation</span>
             </a>
             <a 
@@ -130,7 +141,7 @@ const FinalCTA = ({ language = 'en' }: FinalCTAProps) => {
               rel="noopener noreferrer"
               className="flex items-center justify-center space-x-2 p-3 rounded-lg hover:bg-blue-400/20 transition-colors group cursor-pointer"
             >
-              <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <FaTelegram className="w-5 h-5 text-blue-500 group-hover:scale-110 transition-transform" />
               <span className="group-hover:text-white/90">Telegram: @KoMinEducation</span>
             </a>
           </div>

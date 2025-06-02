@@ -5,7 +5,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { FaWhatsapp, FaWeixin, FaTelegram } from 'react-icons/fa';
+import { SiKakaotalk } from 'react-icons/si';
 
 interface ContactProps {
   language?: 'en' | 'kr' | 'cn';
@@ -250,7 +252,7 @@ const Contact = ({ language = 'en' }: ContactProps) => {
                       rel="noopener noreferrer"
                       className="flex items-center space-x-3 hover:text-green-600 transition-colors group cursor-pointer"
                     >
-                      <MessageCircle className="w-5 h-5 text-green-600 group-hover:scale-110 transition-transform" />
+                      <FaWhatsapp className="w-5 h-5 text-green-600 group-hover:scale-110 transition-transform" />
                       <span className="text-gray-700 group-hover:text-green-600">WhatsApp: +65 9123 4567</span>
                     </a>
                     <a 
@@ -259,7 +261,7 @@ const Contact = ({ language = 'en' }: ContactProps) => {
                       rel="noopener noreferrer"
                       className="flex items-center space-x-3 hover:text-green-500 transition-colors group cursor-pointer"
                     >
-                      <MessageCircle className="w-5 h-5 text-green-500 group-hover:scale-110 transition-transform" />
+                      <FaWeixin className="w-5 h-5 text-green-500 group-hover:scale-110 transition-transform" />
                       <span className="text-gray-700 group-hover:text-green-500">WeChat: KoMinEducation</span>
                     </a>
                     <a 
@@ -268,11 +270,21 @@ const Contact = ({ language = 'en' }: ContactProps) => {
                       rel="noopener noreferrer"
                       className="flex items-center space-x-3 hover:text-yellow-500 transition-colors group cursor-pointer"
                     >
-                      <MessageCircle className="w-5 h-5 text-yellow-500 group-hover:scale-110 transition-transform" />
+                      <SiKakaotalk className="w-5 h-5 text-yellow-500 group-hover:scale-110 transition-transform" />
                       <span className="text-gray-700 group-hover:text-yellow-500">KakaoTalk: KoMinEducation</span>
+                    </a>
+                    <a 
+                      href="https://t.me/KoMinEducation"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-3 hover:text-blue-500 transition-colors group cursor-pointer"
+                    >
+                      <FaTelegram className="w-5 h-5 text-blue-500 group-hover:scale-110 transition-transform" />
+                      <span className="text-gray-700 group-hover:text-blue-500">Telegram: @KoMinEducation</span>
                     </a>
                   </div>
                 </div>
+
 
                 {/* Emergency Support */}
                 <div className="mt-8 bg-navy text-white p-6 rounded-xl">
