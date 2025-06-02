@@ -22,7 +22,7 @@ const Navigation = ({ language = 'en' }: NavigationProps) => {
       home: 'Home',
       services: 'Services',
       packages: 'Packages',
-      success: 'Success Stories',
+      about: 'About',
       blog: 'Blog',
       contact: 'Contact',
       consult: 'Free Consultation'
@@ -31,7 +31,7 @@ const Navigation = ({ language = 'en' }: NavigationProps) => {
       home: '홈',
       services: '서비스',
       packages: '패키지',
-      success: '성공 사례',
+      about: '소개',
       blog: '블로그',
       contact: '연락처',
       consult: '무료 상담'
@@ -40,7 +40,7 @@ const Navigation = ({ language = 'en' }: NavigationProps) => {
       home: '首页',
       services: '服务',
       packages: '套餐',
-      success: '成功案例',
+      about: '关于我们',
       blog: '博客',
       contact: '联系我们',
       consult: '免费咨询'
@@ -69,8 +69,8 @@ const Navigation = ({ language = 'en' }: NavigationProps) => {
             <Link to={`${getBasePath()}/packages`} className="text-gray-600 hover:text-navy transition-colors">
               {texts.packages}
             </Link>
-            <Link to={`${getBasePath()}/success`} className="text-gray-600 hover:text-navy transition-colors">
-              {texts.success}
+            <Link to={`${getBasePath()}/about`} className="text-gray-600 hover:text-navy transition-colors">
+              {texts.about}
             </Link>
             <Link to={`${getBasePath()}/blog`} className="text-gray-600 hover:text-navy transition-colors">
               {texts.blog}
@@ -132,8 +132,8 @@ const Navigation = ({ language = 'en' }: NavigationProps) => {
               <Link to={`${getBasePath()}/packages`} className="text-gray-600 hover:text-navy" onClick={() => setIsMenuOpen(false)}>
                 {texts.packages}
               </Link>
-              <Link to={`${getBasePath()}/success`} className="text-gray-600 hover:text-navy" onClick={() => setIsMenuOpen(false)}>
-                {texts.success}
+              <Link to={`${getBasePath()}/about`} className="text-gray-600 hover:text-navy" onClick={() => setIsMenuOpen(false)}>
+                {texts.about}
               </Link>
               <Link to={`${getBasePath()}/blog`} className="text-gray-600 hover:text-navy" onClick={() => setIsMenuOpen(false)}>
                 {texts.blog}

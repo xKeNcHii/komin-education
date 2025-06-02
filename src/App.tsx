@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Packages from "./pages/Packages";
-import Success from "./pages/Success";
+import About from "./pages/About";
 import Consult from "./pages/Consult";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
@@ -25,7 +25,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
           <Route path="/packages" element={<Packages />} />
-          <Route path="/success" element={<Success />} />
+          <Route path="/about" element={<About />} />
           <Route path="/consult" element={<Consult />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
@@ -33,21 +33,21 @@ const App = () => (
           <Route path="/kr" element={<Index language="kr" />} />
           <Route path="/kr/services" element={<Services language="kr" />} />
           <Route path="/kr/packages" element={<Packages language="kr" />} />
-          <Route path="/kr/success" element={<Success language="kr" />} />
+          <Route path="/kr/about" element={<About language="kr" />} />
           <Route path="/kr/consult" element={<Consult language="kr" />} />
           <Route path="/kr/blog" element={<Blog language="kr" />} />
           <Route path="/kr/contact" element={<Contact language="kr" />} />
           <Route path="/cn" element={<Index language="cn" />} />
           <Route path="/cn/services" element={<Services language="cn" />} />
           <Route path="/cn/packages" element={<Packages language="cn" />} />
-          <Route path="/cn/success" element={<Success language="cn" />} />
+          <Route path="/cn/about" element={<About language="cn" />} />
           <Route path="/cn/consult" element={<Consult language="cn" />} />
           <Route path="/cn/blog" element={<Blog language="cn" />} />
           <Route path="/cn/contact" element={<Contact language="cn" />} />
           <Route path="/en" element={<Index language="en" />} />
           <Route path="/en/services" element={<Services language="en" />} />
           <Route path="/en/packages" element={<Packages language="en" />} />
-          <Route path="/en/success" element={<Success language="en" />} />
+          <Route path="/en/about" element={<About language="en" />} />
           <Route path="/en/consult" element={<Consult language="en" />} />
           <Route path="/en/blog" element={<Blog language="en" />} />
           <Route path="/en/contact" element={<Contact language="en" />} />

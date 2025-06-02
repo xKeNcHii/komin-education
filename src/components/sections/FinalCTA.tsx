@@ -77,7 +77,7 @@ const FinalCTA = ({ language = 'en' }: FinalCTAProps) => {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Button 
             asChild 
             size="lg" 
@@ -96,20 +96,24 @@ const FinalCTA = ({ language = 'en' }: FinalCTAProps) => {
         </div>
 
         {/* Contact Info */}
-        <div className="mt-12 pt-8 border-t border-white/20">
-          <p className="text-white/70 mb-4">{content.preferTalk}</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center text-sm">
-            <div className="flex items-center space-x-2">
+        <div className="border-t border-white/20 pt-8">
+          <p className="text-white/70 mb-6">{content.preferTalk}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+            <div className="flex items-center justify-center space-x-2">
               <Mail className="w-4 h-4" />
               <span>info@komin-education.com</span>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center justify-center space-x-2">
               <MessageCircle className="w-4 h-4" />
               <span>WhatsApp: +65 9123 4567</span>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center justify-center space-x-2">
               <MessageCircle className="w-4 h-4" />
               <span>KakaoTalk: KoMinEducation</span>
+            </div>
+            <div className="flex items-center justify-center space-x-2">
+              <MessageCircle className="w-4 h-4" />
+              <span>Telegram: @KoMinEducation</span>
             </div>
           </div>
         </div>

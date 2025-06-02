@@ -6,7 +6,8 @@ import WhatWeDo from '@/components/sections/WhatWeDo';
 import WhoWeHelp from '@/components/sections/WhoWeHelp';
 import WhySingapore from '@/components/sections/WhySingapore';
 import OurPackages from '@/components/sections/OurPackages';
-import SuccessStories from '@/components/sections/SuccessStories';
+import PartnerLogos from '@/components/sections/PartnerLogos';
+import FAQ from '@/components/sections/FAQ';
 import FinalCTA from '@/components/sections/FinalCTA';
 
 interface IndexProps {
@@ -21,7 +22,8 @@ const Index = ({ language = 'en' }: IndexProps) => {
       <WhoWeHelp language={language} />
       <WhySingapore language={language} />
       <OurPackages language={language} />
-      <SuccessStories language={language} />
+      <PartnerLogos language={language} />
+      <FAQ language={language} />
       <FinalCTA language={language} />
     </Layout>
   );
