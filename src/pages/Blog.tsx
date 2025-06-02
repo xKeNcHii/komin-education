@@ -1,7 +1,6 @@
 
 import React from 'react';
 import Layout from '@/components/Layout';
-import SocialIcons from '@/components/SocialIcons';
 
 interface BlogProps {
   language?: 'en' | 'kr' | 'cn';
@@ -43,7 +42,6 @@ const Blog = ({ language = 'en' }: BlogProps) => {
           
           <div className="bg-white rounded-2xl p-8 shadow-lg text-center animate-[fade-in_1s_ease-out_400ms_both]">
             <p className="text-lg text-gray-600 mb-8">{content.followUs}</p>
-            <SocialIcons variant="horizontal" size="lg" className="justify-center" />
           </div>
         </div>
       </div>
