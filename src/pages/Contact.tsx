@@ -27,6 +27,7 @@ const Contact = ({ language = 'en' }: ContactProps) => {
       contactInfo: 'Contact Information',
       emergencySupport: '24/7 Emergency Support',
       emergencyText: 'For urgent matters involving current students in Singapore:',
+      instantMessaging: 'Instant Messaging',
       form: {
         name: 'Your Name',
         email: 'Email Address',
@@ -67,6 +68,7 @@ const Contact = ({ language = 'en' }: ContactProps) => {
       contactInfo: '연락처 정보',
       emergencySupport: '24시간 긴급 지원',
       emergencyText: '싱가포르 재학생 관련 긴급 사항:',
+      instantMessaging: '즉석 메시징',
       form: {
         name: '성명',
         email: '이메일 주소',
@@ -107,6 +109,7 @@ const Contact = ({ language = 'en' }: ContactProps) => {
       contactInfo: '联系信息',
       emergencySupport: '24/7紧急支持',
       emergencyText: '新加坡在读学生紧急事务：',
+      instantMessaging: '即时通讯',
       form: {
         name: '您的姓名',
         email: '电子邮箱',
@@ -214,14 +217,20 @@ const Contact = ({ language = 'en' }: ContactProps) => {
                           <MapPin className="w-5 h-5 text-navy mt-0.5" />
                           <span className="text-gray-700">{office.address}</span>
                         </div>
-                        <div className="flex items-center space-x-3">
-                          <Phone className="w-5 h-5 text-navy" />
-                          <span className="text-gray-700">{office.phone}</span>
-                        </div>
-                        <div className="flex items-center space-x-3">
-                          <Mail className="w-5 h-5 text-navy" />
-                          <span className="text-gray-700">{office.email}</span>
-                        </div>
+                        <a 
+                          href={`tel:${office.phone.replace(/\s/g, '')}`}
+                          className="flex items-center space-x-3 hover:text-navy transition-colors group cursor-pointer"
+                        >
+                          <Phone className="w-5 h-5 text-navy group-hover:scale-110 transition-transform" />
+                          <span className="text-gray-700 group-hover:text-navy">{office.phone}</span>
+                        </a>
+                        <a 
+                          href={`mailto:${office.email}`}
+                          className="flex items-center space-x-3 hover:text-navy transition-colors group cursor-pointer"
+                        >
+                          <Mail className="w-5 h-5 text-navy group-hover:scale-110 transition-transform" />
+                          <span className="text-gray-700 group-hover:text-navy">{office.email}</span>
+                        </a>
                         <div className="flex items-center space-x-3">
                           <Clock className="w-5 h-5 text-navy" />
                           <span className="text-gray-700">{office.hours}</span>
@@ -233,33 +242,51 @@ const Contact = ({ language = 'en' }: ContactProps) => {
 
                 {/* Messaging Apps */}
                 <div className="mt-8 bg-light-gray p-6 rounded-xl">
-                  <h3 className="text-lg font-semibold text-navy mb-4">Instant Messaging</h3>
+                  <h3 className="text-lg font-semibold text-navy mb-4">{content.instantMessaging}</h3>
                   <div className="space-y-3">
-                    <div className="flex items-center space-x-3">
-                      <MessageCircle className="w-5 h-5 text-navy" />
-                      <span className="text-gray-700">WhatsApp: +65 9123 4567</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <MessageCircle className="w-5 h-5 text-navy" />
-                      <span className="text-gray-700">WeChat: KoMinEducation</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <MessageCircle className="w-5 h-5 text-navy" />
-                      <span className="text-gray-700">KakaoTalk: KoMinEducation</span>
-                    </div>
+                    <a 
+                      href="https://wa.me/6591234567"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-3 hover:text-green-600 transition-colors group cursor-pointer"
+                    >
+                      <MessageCircle className="w-5 h-5 text-green-600 group-hover:scale-110 transition-transform" />
+                      <span className="text-gray-700 group-hover:text-green-600">WhatsApp: +65 9123 4567</span>
+                    </a>
+                    <a 
+                      href="https://weixin.qq.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-3 hover:text-green-500 transition-colors group cursor-pointer"
+                    >
+                      <MessageCircle className="w-5 h-5 text-green-500 group-hover:scale-110 transition-transform" />
+                      <span className="text-gray-700 group-hover:text-green-500">WeChat: KoMinEducation</span>
+                    </a>
+                    <a 
+                      href="https://open.kakao.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-3 hover:text-yellow-500 transition-colors group cursor-pointer"
+                    >
+                      <MessageCircle className="w-5 h-5 text-yellow-500 group-hover:scale-110 transition-transform" />
+                      <span className="text-gray-700 group-hover:text-yellow-500">KakaoTalk: KoMinEducation</span>
+                    </a>
                   </div>
                 </div>
 
-                {/* Additional Contact Methods */}
+                {/* Emergency Support */}
                 <div className="mt-8 bg-navy text-white p-6 rounded-xl">
                   <h3 className="text-lg font-semibold mb-4">{content.emergencySupport}</h3>
                   <p className="text-white/90 mb-4">
                     {content.emergencyText}
                   </p>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5" />
-                    <span>+65 9999 8888</span>
-                  </div>
+                  <a 
+                    href="tel:+6599998888"
+                    className="flex items-center space-x-3 hover:text-soft-red transition-colors group cursor-pointer"
+                  >
+                    <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                    <span className="group-hover:text-soft-red">+65 9999 8888</span>
+                  </a>
                 </div>
               </div>
             </div>

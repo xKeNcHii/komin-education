@@ -95,34 +95,63 @@ const Footer = ({ language = 'en' }: FooterProps) => {
           <div>
             <h3 className="text-lg font-semibold mb-6">{texts.contact}</h3>
             <div className="space-y-4 text-sm text-gray-300">
-              <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5" />
+              <a 
+                href="mailto:info@komin-education.com"
+                className="flex items-center space-x-3 hover:text-white transition-colors group cursor-pointer"
+              >
+                <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>{texts.email}</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5" />
+              </a>
+              <a 
+                href="tel:+6591234567"
+                className="flex items-center space-x-3 hover:text-white transition-colors group cursor-pointer"
+              >
+                <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>{texts.singapore}</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5" />
+              </a>
+              <a 
+                href="tel:+821012345678"
+                className="flex items-center space-x-3 hover:text-white transition-colors group cursor-pointer"
+              >
+                <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>{texts.korea}</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MessageCircle className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://wa.me/6591234567"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 hover:text-green-400 transition-colors group cursor-pointer"
+              >
+                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>{texts.whatsapp}: +65 9123 4567</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MessageCircle className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://weixin.qq.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 hover:text-green-500 transition-colors group cursor-pointer"
+              >
+                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>{texts.wechat}: KoMinEducation</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MessageCircle className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://open.kakao.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 hover:text-yellow-400 transition-colors group cursor-pointer"
+              >
+                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>{texts.kakao}: KoMinEducation</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MessageCircle className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://t.me/KoMinEducation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 hover:text-blue-400 transition-colors group cursor-pointer"
+              >
+                <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span>{texts.telegram}: @KoMinEducation</span>
-              </div>
+              </a>
             </div>
           </div>
 

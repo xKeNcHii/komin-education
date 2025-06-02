@@ -99,22 +99,40 @@ const FinalCTA = ({ language = 'en' }: FinalCTAProps) => {
         <div className="border-t border-white/20 pt-8">
           <p className="text-white/70 mb-6">{content.preferTalk}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
-            <div className="flex items-center justify-center space-x-2">
-              <Mail className="w-4 h-4" />
-              <span>info@komin-education.com</span>
-            </div>
-            <div className="flex items-center justify-center space-x-2">
-              <MessageCircle className="w-4 h-4" />
-              <span>WhatsApp: +65 9123 4567</span>
-            </div>
-            <div className="flex items-center justify-center space-x-2">
-              <MessageCircle className="w-4 h-4" />
-              <span>KakaoTalk: KoMinEducation</span>
-            </div>
-            <div className="flex items-center justify-center space-x-2">
-              <MessageCircle className="w-4 h-4" />
-              <span>Telegram: @KoMinEducation</span>
-            </div>
+            <a 
+              href="mailto:info@komin-education.com"
+              className="flex items-center justify-center space-x-2 p-3 rounded-lg hover:bg-white/10 transition-colors group cursor-pointer"
+            >
+              <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <span className="group-hover:text-white/90">info@komin-education.com</span>
+            </a>
+            <a 
+              href="https://wa.me/6591234567"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center space-x-2 p-3 rounded-lg hover:bg-green-600/20 transition-colors group cursor-pointer"
+            >
+              <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <span className="group-hover:text-white/90">WhatsApp: +65 9123 4567</span>
+            </a>
+            <a 
+              href="https://t.me/KoMinEducation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center space-x-2 p-3 rounded-lg hover:bg-blue-500/20 transition-colors group cursor-pointer"
+            >
+              <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <span className="group-hover:text-white/90">KakaoTalk: KoMinEducation</span>
+            </a>
+            <a 
+              href="https://t.me/KoMinEducation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center space-x-2 p-3 rounded-lg hover:bg-blue-400/20 transition-colors group cursor-pointer"
+            >
+              <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <span className="group-hover:text-white/90">Telegram: @KoMinEducation</span>
+            </a>
           </div>
         </div>
       </div>
