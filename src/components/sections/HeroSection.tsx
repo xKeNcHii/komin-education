@@ -128,13 +128,6 @@ const HeroSection = ({ language = 'en' }: HeroSectionProps) => {
                 <Link to={`${getBasePath()}/packages`}>{texts.secondaryCta}</Link>
               </Button>
             </div>
-            {/* Testimonial with Avatar */}
-            <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20 mb-6 max-w-xl w-full">
-              <div>
-                <p className="text-white/90 italic mb-1">"Without KoMin, we wouldn't have made it to NUS. They handled everything."</p>
-                <p className="text-white/70 text-sm">— Parent, Seoul</p>
-              </div>
-            </div>
           </div>
 
           {/* Right Side - Stats Badge & University Logos */}

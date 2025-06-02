@@ -44,12 +44,12 @@ const PartnerLogos = ({ language = 'en' }: PartnerLogosProps) => {
   const partners = [
     {
       name: 'Singapore Tourism Board',
-      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/2/2f/Singapore_Tourism_Board_Logo.svg/1200px-Singapore_Tourism_Board_Logo.svg.png',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Singapore_Tourism_Board_text_logo.svg/1200px-Singapore_Tourism_Board_text_logo.svg.png',
       alt: 'STB Logo'
     },
     {
       name: 'Ministry of Education Singapore',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Coat_of_arms_of_Singapore.svg/1200px-Coat_of_arms_of_Singapore.svg.png',
+      logo: 'https://www.giving.sg/res/GetEntityGroupImage/80b6652d-703c-488e-9987-5bd9587996dc.jpg',
       alt: 'MOE Singapore Logo'
     }
   ];
